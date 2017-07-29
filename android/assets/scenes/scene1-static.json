@@ -55,8 +55,7 @@
         },
         "tag": { "tag": "break_floor_00" },
         "sprite": { "sprite": "sprites/scene1/break_floor_01" },
-        "sprite-n": {
-          "type": "sprite",
+        "normal sprite": {
           "pass": "game-normals",
           "sprite": "sprites/scene1/break_floor_01_n",
         },

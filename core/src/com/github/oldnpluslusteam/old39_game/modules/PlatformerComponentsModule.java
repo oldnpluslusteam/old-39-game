@@ -2,6 +2,7 @@ package com.github.oldnpluslusteam.old39_game.modules;
 
 import com.github.alexeybond.partly_solid_bicycle.ioc.IoC;
 import com.github.alexeybond.partly_solid_bicycle.ioc.modules.Module;
+import com.github.oldnpluslusteam.old39_game.components.NormalSprite;
 import com.github.oldnpluslusteam.old39_game.components.PlayerController;
 import com.github.oldnpluslusteam.old39_game.components.StateAnimationSetter;
 
@@ -15,6 +16,8 @@ public class PlatformerComponentsModule implements Module {
         map.put("player controller", PlayerController.Decl.class);
 
         map.put("state animation setter", StateAnimationSetter.Decl.class);
+
+        map.put("normal sprite", NormalSprite.Decl.class);
     }
 
     @Override
