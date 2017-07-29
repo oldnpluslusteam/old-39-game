@@ -1,0 +1,25 @@
+{
+  "entities": [
+    {
+      "components": {
+        "body": { "bodyType": "StaticBody" },
+        "box fixture": { "size": [1000, 30] },
+      }
+    },
+    {
+      "components": {
+        "camera": {
+          "pass": "setup-main-camera",
+          "globalAlias": "mainCamera"
+        },
+      }
+    },
+    {
+      "components": {
+        "physics debugger": {
+          "camera": "mainCamera",
+        }
+      }
+    }
+  ]
+}
