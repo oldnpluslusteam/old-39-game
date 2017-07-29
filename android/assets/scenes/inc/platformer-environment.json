@@ -1,0 +1,14 @@
+{
+  "classes": {
+    "point-light-0": {
+      "components": {
+        "sprite": {
+          "type": "sprite",
+          "pass": "game-light",
+          "sprite": "sprites/light/light0__l",
+          "scale": 3,
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
   "include": [
     "scenes/inc/platformer-player-logic.json",
     "scenes/inc/platformer-player-view.json",
+    "scenes/inc/platformer-environment.json",
     "scenes/scene1-static.json",
     "scenes/scene1-cameras.json",
   ],
