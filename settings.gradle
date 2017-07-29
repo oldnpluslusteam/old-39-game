@@ -6,8 +6,6 @@ patchPaths = { project ->
     String relativeProjectPath = absoluteProjectPath.replace(settingsDir.path, "")
     project.projectDir = new File("partly_solid_bicycle/$relativeProjectPath")
 
-    System.out.println("\n\n****\n"+absoluteProjectPath+"\n"+relativeProjectPath+"\n"+project.projectDir.getPath()+"\n\n****\n")
-
     project.children.each patchPaths
 }
 
