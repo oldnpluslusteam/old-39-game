@@ -1,0 +1,8 @@
+apply from: 'partly_solid_bicycle/settings.gradle'
+
+rootProject.children.each { project ->
+    String relativeProjectPath = project.projectDir.path.replace(settingsDir.path, "")
+    project.projectDir = new File("partly_solid_bicycle/$relativeProjectPath")
+}
+
+include 'desktop', 'android', 'core'
