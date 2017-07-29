@@ -1,0 +1,73 @@
+{
+  "include": [
+    "scenes/inc/platformer-triggers.json",
+  ],
+  "classes": {
+    "camera-target": {
+      "components": {
+        "camera target": {},
+      },
+      "properties": {
+        "zoomFunction": ["fixed diagonal zoom function", "1500"],
+      },
+    }
+  },
+  "entities": [
+    {
+      "inherit": ["camera-target", "mini-trigger"],
+      "components": {
+        "tag": {"tag": "target_00"},
+        "set camera target": {
+          "event": "trigger",
+          "cameraTag": "camera",
+          "time": 1,
+        }
+      },
+      "properties": {
+        "position": ["0", "100"],
+      },
+    },
+    {
+      "inherit": ["camera-target", "mini-trigger"],
+      "components": {
+        "tag": {"tag": "target_01"},
+        "set camera target": {
+          "event": "trigger",
+          "cameraTag": "camera",
+          "time": 1,
+        }
+      },
+      "properties": {
+        "position": ["500", "100"],
+      },
+    },
+    {
+      "inherit": ["camera-target", "mini-trigger"],
+      "components": {
+        "tag": {"tag": "target_01"},
+        "set camera target": {
+          "event": "trigger",
+          "cameraTag": "camera",
+          "time": 1,
+        }
+      },
+      "properties": {
+        "position": ["800", "-400"],
+      },
+    },
+    {
+      "inherit": ["camera-target", "mini-trigger"],
+      "components": {
+        "tag": {"tag": "target_01"},
+        "set camera target": {
+          "event": "trigger",
+          "cameraTag": "camera",
+          "time": 1,
+        }
+      },
+      "properties": {
+        "position": ["1200", "-400"],
+      },
+    },
+  ],
+}

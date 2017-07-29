@@ -7,6 +7,13 @@
         },
       },
     },
+    "broken-part": {
+      "components": {
+        "body": {
+          "bodyType": "DynamicBody",
+        },
+      },
+    },
   },
 
   "entities": [
@@ -20,6 +27,77 @@
       "properties": {
         "position": ["0", "-20"]
       }
-    }
+    },
+    {
+      "inherit": ["static"],
+      "components": {
+        "box fixture": {
+          "size": [400, 55],
+        },
+        "trigger fixture": {
+          "type": "circle fixture",
+          "sensor": true,
+          "collisionBeginEvent": "break",
+          "center": [0, 100],
+        },
+        "tag": { "tag": "break_floor_00" },
+        "sprite": { "sprite": "sprites/scene1/break_floor_01" },
+        "destructible": {
+          "centerDestructionEvent": "break",
+          "destructionEndEvent": "destructionEnd",
+          "partClass": "broken-part",
+          "fromFixture": "box fixture",
+          "texture": "sprites/scene1/break_floor_01",
+          "sprites": [
+            {
+              "pass": "game-objects",
+            },
+            {
+              "pass": "game-normals-stub",
+            }
+          ],
+          "destroyerConfig": {
+            "crackLengthMin": 30,
+            "crackLengthMax": 50,
+            "minTriArea": 1,
+            "forkRaysMin": 2,
+            "forkRaysMax": 3,
+            "forkAngleRange": 89,
+            "forkAngleRestrictRangeFraction": 0.1,
+          }
+        },
+        "set camera target": {
+          "cameraTag": "camera",
+          "targetTag": "player",
+          "event": "destructionEnd",
+        },
+        "destroy on event": { "event": "destructionEnd" },
+      },
+      "properties": {
+        "position": ["700", "-38.5"],
+      },
+    },
+    {
+      "inherit": ["static"],
+      "components": {
+        "box fixture": {
+          "size": [1000, 20]
+        }
+      },
+      "properties": {
+        "position": ["1000", "-500"]
+      }
+    },
+    {
+      "inherit": ["static"],
+      "components": {
+        "box fixture": {
+          "size": [40, 40],
+        }
+      },
+      "properties": {
+        "position": ["500", "-100"]
+      }
+    },
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "classes": {
+    "mini-trigger": {
+      "components": {
+        "body": {
+          "bodyType": "StaticBody",
+        },
+        "circle fixture": {
+          "radius": 20,
+          "sensor": true,
+          "collisionBeginEvent": "trigger",
+          "collisionGroup": "-triggers",
+          "collisionMask": [
+            "player-body",
+          ],
+        }
+      }
+    },
+  }
+}

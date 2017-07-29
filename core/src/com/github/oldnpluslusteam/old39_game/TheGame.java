@@ -5,6 +5,8 @@ import com.github.alexeybond.partly_solid_bicycle.application.modules.DefaultLoa
 import com.github.alexeybond.partly_solid_bicycle.drawing.modules.GlobalDrawingState;
 import com.github.alexeybond.partly_solid_bicycle.drawing.modules.GlobalParticlePool;
 import com.github.alexeybond.partly_solid_bicycle.drawing.modules.ShaderLoader;
+import com.github.alexeybond.partly_solid_bicycle.ext.destruction.modules.DestroyersPoolModule;
+import com.github.alexeybond.partly_solid_bicycle.ext.destruction.modules.DestructibleComponentModule;
 import com.github.alexeybond.partly_solid_bicycle.ext.spriter_animation.modules.SpriterAnimationModule;
 import com.github.alexeybond.partly_solid_bicycle.game.modules.CommonComponents;
 import com.github.alexeybond.partly_solid_bicycle.game.modules.GameSerialization;
@@ -40,6 +42,9 @@ public class TheGame extends Application {
 		modules.add(new CommonComponents());
 
 		modules.add(new SpriterAnimationModule());
+
+		modules.add(new DestroyersPoolModule());
+		modules.add(new DestructibleComponentModule());
 
 		modules.add(new StartupScreenModule());
 		modules.add(new PlatformerComponentsModule());

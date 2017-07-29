@@ -3,6 +3,7 @@
     "scenes/inc/platformer-player-logic.json",
     "scenes/inc/platformer-player-view.json",
     "scenes/scene1-static.json",
+    "scenes/scene1-cameras.json",
   ],
   "classes": {
     "player": {
@@ -16,7 +17,13 @@
           "pass": "setup-main-camera",
           "globalAlias": "mainCamera"
         },
-      }
+        "camera controller": {
+        },
+        "tag": {"tag": "camera"},
+      },
+      "properties": {
+        "zoomFunction": ["fixed diagonal zoom function", "1500"],
+      },
     },
     {
       "components": {

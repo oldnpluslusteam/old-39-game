@@ -3,10 +3,15 @@
     "player-view": {
       "components": {
         "spriter animation": {
+          "pass": "game-objects-fg",
           "animation": "animation/player/basic_000.scml",
           "animationEntity": "monster",
           "scale": 0.26,
           "offset": [0, 50],
+        },
+        "slave spriter animation": {
+          "pass": "game-normals-stub-fg",
+          "master": "spriter animation",
         },
         "state animation setter": {
           "map": {
@@ -18,7 +23,7 @@
             "fall-l": "fall",
             "fall-r": "fall",
           },
-        }
+        },
       },
     }
   }

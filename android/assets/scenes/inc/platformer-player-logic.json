@@ -45,8 +45,14 @@
           "jumpControl": "W"
         }},
 
-        "tag": {"tag": "player"}
+        "tag": {"tag": "player"},
+
+        "camera target": {
+        },
       },
-    }
+      "properties": {
+        "zoomFunction": ["fixed diagonal zoom function", "1000"],
+      }
+    },
   }
 }
