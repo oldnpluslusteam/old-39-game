@@ -1,8 +1,16 @@
 apply from: 'partly_solid_bicycle/settings.gradle'
 
-rootProject.children.each { project ->
-    String relativeProjectPath = project.projectDir.path.replace(settingsDir.path, "")
+def patchPaths
+patchPaths = { project ->
+    String absoluteProjectPath = project.projectDir.path;
+    String relativeProjectPath = absoluteProjectPath.replace(settingsDir.path, "")
     project.projectDir = new File("partly_solid_bicycle/$relativeProjectPath")
+
+    System.out.println("\n\n****\n"+absoluteProjectPath+"\n"+relativeProjectPath+"\n"+project.projectDir.getPath()+"\n\n****\n")
+
+    project.children.each patchPaths
 }
+
+rootProject.children.each patchPaths
 
 include 'desktop', 'android', 'core'

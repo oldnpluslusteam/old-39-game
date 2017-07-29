@@ -78,6 +78,7 @@ project(":core") {
 
     dependencies {
         compile project(":engine_core")
+        compile project(":ext:destruction")
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         
