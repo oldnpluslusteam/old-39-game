@@ -5,6 +5,7 @@ import com.github.alexeybond.partly_solid_bicycle.application.modules.DefaultLoa
 import com.github.alexeybond.partly_solid_bicycle.drawing.modules.GlobalDrawingState;
 import com.github.alexeybond.partly_solid_bicycle.drawing.modules.GlobalParticlePool;
 import com.github.alexeybond.partly_solid_bicycle.drawing.modules.ShaderLoader;
+import com.github.alexeybond.partly_solid_bicycle.ext.spriter_animation.modules.SpriterAnimationModule;
 import com.github.alexeybond.partly_solid_bicycle.game.modules.CommonComponents;
 import com.github.alexeybond.partly_solid_bicycle.game.modules.GameSerialization;
 import com.github.alexeybond.partly_solid_bicycle.game.systems.box2d_physics.modules.PhysicsComponentDeclarations;
@@ -15,6 +16,7 @@ import com.github.alexeybond.partly_solid_bicycle.game.systems.tagging.modules.T
 import com.github.alexeybond.partly_solid_bicycle.ioc.modules.Modules;
 import com.github.alexeybond.partly_solid_bicycle.music.modules.GlobalMusicPlayer;
 import com.github.alexeybond.partly_solid_bicycle.resource_management.modules.ResourceManagement;
+import com.github.oldnpluslusteam.old39_game.modules.PlatformerComponentsModule;
 import com.github.oldnpluslusteam.old39_game.modules.StartupScreenModule;
 
 public class TheGame extends Application {
@@ -37,7 +39,10 @@ public class TheGame extends Application {
 		modules.add(new TaggingComponentsDeclarations());
 		modules.add(new CommonComponents());
 
+		modules.add(new SpriterAnimationModule());
+
 		modules.add(new StartupScreenModule());
+		modules.add(new PlatformerComponentsModule());
 
 		return modules;
 	}

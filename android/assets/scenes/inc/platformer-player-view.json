@@ -1,0 +1,25 @@
+{
+  "classes": {
+    "player-view": {
+      "components": {
+        "spriter animation": {
+          "animation": "animation/player/basic_000.scml",
+          "animationEntity": "monster",
+          "scale": 0.26,
+          "offset": [0, 50],
+        },
+        "state animation setter": {
+          "map": {
+            "idle": "idle",
+            "walk-l": "run",
+            "walk-r": "run",
+            "jump-l": "jump",
+            "jump-r": "jump",
+            "fall-l": "fall",
+            "fall-r": "fall",
+          },
+        }
+      },
+    }
+  }
+}

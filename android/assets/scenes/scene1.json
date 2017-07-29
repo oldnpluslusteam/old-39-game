@@ -1,11 +1,15 @@
 {
+  "include": [
+    "scenes/inc/platformer-player-logic.json",
+    "scenes/inc/platformer-player-view.json",
+    "scenes/scene1-static.json",
+  ],
+  "classes": {
+    "player": {
+      "inherit": ["player-logic", "player-view"],
+    }
+  },
   "entities": [
-    {
-      "components": {
-        "body": { "bodyType": "StaticBody" },
-        "box fixture": { "size": [1000, 30] },
-      }
-    },
     {
       "components": {
         "camera": {
@@ -18,8 +22,18 @@
       "components": {
         "physics debugger": {
           "camera": "mainCamera",
-        }
-      }
-    }
+        },
+        "mouse joint": {
+          "tolerance": 10,
+        },
+      },
+    },
+
+    {
+      "inherit": ["player"],
+      "properties": {
+        "position": ["0", "0"],
+      },
+    },
   ]
 }

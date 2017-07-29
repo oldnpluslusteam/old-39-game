@@ -1,0 +1,52 @@
+{
+  "classes": {
+    "player-logic": {
+      "components": {
+        "body": {
+          "bodyType": "DynamicBody",
+          "noRotation": true,
+          "isBullet": true,
+        },
+
+        "body box fixture": {
+          "type": "box fixture",
+          "center": [0, 60],
+          "size": [50, 80],
+          "collisionCategories": ["default", "player-body"],
+        },
+
+        "feet fixture": {
+          "type": "polygon fixture",
+          //          "friction": 1,
+          "vertices": [
+            -25, 10,
+            //            -15, 0,
+            0, 0,
+            //             15, 0,
+            25, 10,
+            25, 20,
+            -25, 20,
+          ],
+        },
+
+        "ground sensor fixture": {
+          "type": "box fixture",
+          "center": [0, 7],
+          "size": [32, 20],
+          "sensor": true,
+          "collisionBeginEvent": "groundCollisionBegin",
+          "collisionEndEvent": "groundCollisionEnd"
+        },
+        "player controller": {},
+
+        "key bindings": { "bind": {
+          "goLeftControl": "A",
+          "goRightControl": "D",
+          "jumpControl": "W"
+        }},
+
+        "tag": {"tag": "player"}
+      },
+    }
+  }
+}

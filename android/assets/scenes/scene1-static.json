@@ -1,0 +1,25 @@
+{
+  "classes": {
+    "static": {
+      "components": {
+        "body": {
+          "bodyType": "StaticBody"
+        },
+      },
+    },
+  },
+
+  "entities": [
+    {
+      "inherit": ["static"],
+      "components": {
+        "box fixture": {
+          "size": [1000, 20]
+        }
+      },
+      "properties": {
+        "position": ["0", "-20"]
+      }
+    }
+  ]
+}
