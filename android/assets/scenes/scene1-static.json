@@ -15,15 +15,28 @@
       },
     },
     "rope-end-light": {
-      "inherit": ["point-light-0"],
+//      "inherit": ["point-light-0"],
       "components": {
         "body": {
           "bodyType": "DynamicBody",
-          "noRotation": true,
+//          "noRotation": true,
         },
         "circle fixture": {
           "radius": 5,
-        }
+          "center": [0, -5],
+        },
+        "particles:main": {
+          "type": "particles",
+          "pass": "game-particles",
+          "effect": "particles/sparks_00_a.p",
+          "rotate": -90,
+        },
+        "particles:light": {
+          "type": "particles",
+          "pass": "game-light",
+          "effect": "particles/sparks_00_l.p",
+          "rotate": -90,
+        },
       }
     },
     "big-brick-wall": {
@@ -56,6 +69,12 @@
     {
       "inherit": ["big-brick-wall"],
       "properties": {
+        "position": ["2048", "0"],
+      }
+    },
+    {
+      "inherit": ["big-brick-wall"],
+      "properties": {
         "position": ["2048", "-1024"],
       }
     },
@@ -64,6 +83,32 @@
       "properties": {
         "position": ["1024", "-1024"],
       }
+    },
+    {
+      "components": {
+        "particles:main": {
+          "type": "particles",
+          "pass": "game-particles",
+          "effect": "particles/fire-main.p",
+          "rotate": -90,
+        },
+        "particles:light": {
+          "type": "particles",
+          "pass": "game-light",
+          "effect": "particles/fire-light.p",
+          "rotate": -90,
+        },
+        "particles:refract": {
+          "type": "particles",
+          "pass": "game-refraction",
+          "effect": "particles/fire-refract.p",
+          "rotate": -90,
+        },
+      },
+      "properties": {
+        "position": ["-200", "0"],
+        "rotation": ["180"],
+      },
     },
     {
       "inherit": ["static"],
@@ -158,7 +203,7 @@
       "components": {
         "rope": {
           "startEntity": "static_00",
-          "startAnchor": [800, 300],
+          "startAnchor": [800, 500],
           "startLocal": false,
 
           "segmentLength": 10,
@@ -185,6 +230,37 @@
           "segmentScale": 0.5,
         },
       },
-    }
+    },
+
+    {
+      "inherit": ["point-light-0"],
+      "properties": {
+        "position": ["600", "400"],
+      }
+    },
+    {
+      "inherit": ["point-light-0"],
+      "properties": {
+        "position": ["200", "200"],
+      }
+    },
+    {
+      "inherit": ["point-light-0"],
+      "properties": {
+        "position": ["600", "-300"],
+      }
+    },
+    {
+      "inherit": ["point-light-0"],
+      "properties": {
+        "position": ["1000", "-300"],
+      }
+    },
+    {
+      "inherit": ["point-light-0"],
+      "properties": {
+        "position": ["1400", "-300"],
+      }
+    },
   ]
 }
