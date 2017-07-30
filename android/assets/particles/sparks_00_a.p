@@ -110,7 +110,7 @@ active: false
 - Tint - 
 colorsCount: 3
 colors0: 1.0
-colors1: 0.3764706
+colors1: 0.37254903
 colors2: 0.2509804
 timelineCount: 1
 timeline0: 0.0
@@ -136,10 +136,10 @@ timeline4: 0.72602737
 timeline5: 1.0
 - Options - 
 attached: false
-continuous: true
+continuous: false
 aligned: false
 additive: true
 behind: false
 premultipliedAlpha: false
 - Image Path -
-/D:/code/old39-game/android/assets/particle.png
+particle.png

@@ -8,7 +8,7 @@ varying vec2 v_screenCoords;
 uniform sampler2D u_texture;
 uniform sampler2D u_lightTexture;
 
-const vec3 ambient = vec3(0.1);
+const vec3 ambient = vec3(0.2);
 
 void main() {
     vec4 color = texture2D(u_texture, v_texCoords) * v_color;

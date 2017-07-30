@@ -25,17 +25,29 @@
           "radius": 5,
           "center": [0, -5],
         },
+        "sparking controller": {
+          "enableProperty": "particlesEnabled",
+          "enableEvent": "onEnabled",
+          "downRange": [0, 5],
+          "upRange": [0.1, 0.5],
+        },
+        "one shot sound": {
+          "event": "onEnabled",
+          "sound": "sound/spark_01.wav",
+        },
         "particles:main": {
           "type": "particles",
           "pass": "game-particles",
           "effect": "particles/sparks_00_a.p",
           "rotate": -90,
+          "masterProperty": "particlesEnabled",
         },
         "particles:light": {
           "type": "particles",
           "pass": "game-light",
           "effect": "particles/sparks_00_l.p",
           "rotate": -90,
+          "masterProperty": "particlesEnabled",
         },
       }
     },
@@ -104,10 +116,15 @@
           "effect": "particles/fire-refract.p",
           "rotate": -90,
         },
+        "continuous sound": {
+          "event": "fireSoundEnabled",
+          "sound": "sound/fire_loop_00.wav"
+        }
       },
       "properties": {
         "position": ["-200", "0"],
         "rotation": ["180"],
+        "fireSoundEnabled": ["true"],
       },
     },
     {
@@ -207,12 +224,12 @@
           "startLocal": false,
 
           "segmentLength": 10,
-          "segmentCount": 20,
-          "width": 5,
+          "segmentCount": 40,
+          "width": 2,
 
           "segmentAngleLimit": 180,
 
-          "density": 0.005,
+          "density": 0.01,
           "friction": 0,
 
           "endSpawnClass": "rope-end-light",
