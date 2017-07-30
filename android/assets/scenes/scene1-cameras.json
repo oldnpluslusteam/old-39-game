@@ -63,7 +63,15 @@
           "event": "trigger",
           "cameraTag": "camera",
           "time": 1,
-        }
+        },
+        "send event to game": {
+          "ownerEvent": "trigger",
+          "gameEvent": "endGame",
+        },
+        "one shot sound": {
+          "event": "trigger",
+          "sound": "sound/explode_00.wav",
+        },
       },
       "properties": {
         "position": ["1200", "-400"],
