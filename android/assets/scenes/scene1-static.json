@@ -187,6 +187,10 @@
           "targetTag": "player",
           "event": "destructionEnd",
         },
+        "one shot sound": {
+          "event": "destructionEnd",
+          "sound": "sound/explode_00.wav",
+        },
         "destroy on event": { "event": "destructionEnd" },
       },
       "properties": {
