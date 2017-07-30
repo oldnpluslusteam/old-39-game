@@ -13,6 +13,7 @@
           "bodyType": "DynamicBody",
         },
       },
+
     },
     "rope-end-light": {
 //      "inherit": ["point-light-0"],
@@ -55,13 +56,33 @@
       "components": {
         "sprite": {
           "pass": "game-objects-bg",
-          "sprite": "sprites/scene1/wall",
+          "sprite": "sprites/scene1/wall_bg",
         },
         "normal sprite": {
           "pass": "game-normals-bg",
           "sprite": "sprites/scene1/wall__norm",
         }
       }
+    },
+    "static-wall": {
+      "inherit": [
+        "static"
+      ],
+      "components": {
+        "box fixture": {
+          "size": [
+            256,
+            256
+          ]
+        },
+        "sprite": {
+          "sprite": "sprites/scene1/wall_256_256",
+        },
+        "normal sprite": {
+          "pass": "game-normals",
+          "sprite": "sprites/scene1/wall_n_256_256",
+        },
+      },
     }
   },
 
@@ -127,18 +148,78 @@
         "fireSoundEnabled": ["true"],
       },
     },
+    // wall
     {
-      "inherit": ["static"],
-      "components": {
-        "box fixture": {
-          "size": [1000, 20]
-        },
-        "tag": {"tag": "static_00"},
-      },
+      "inherit": ["static-wall"],
       "properties": {
-        "position": ["0", "-20"]
+        "position": [
+          "-392",
+          "628"
+        ]
       }
     },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "-392",
+          "372"
+        ]
+      }
+    },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "-392",
+          "116"
+        ]
+      }
+    },
+    //1st floor
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "-392",
+          "-140"
+        ]
+      }
+    },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "-136",
+          "-140"
+        ]
+      }
+    },
+    // start tile
+    {
+      "inherit": ["static-wall"],
+      "components": {
+        "tag": {
+          "tag": "static_00"
+        },
+      },
+      "properties": {
+        "position": [
+          "120",
+          "-140"
+        ]
+      }
+    },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "376",
+          "-140"
+        ]
+      }
+    },
+    // destrutable floor
     {
       "inherit": ["static"],
       "components": {
@@ -152,7 +233,9 @@
           "center": [0, 100],
         },
         "tag": { "tag": "break_floor_00" },
-        "sprite": { "sprite": "sprites/scene1/break_floor_01" },
+        "sprite": {
+          "sprite": "sprites/scene1/break_floor_01"
+        },
         "normal sprite": {
           "pass": "game-normals",
           "sprite": "sprites/scene1/break_floor_01_n",
@@ -197,15 +280,69 @@
         "position": ["700", "-38.5"],
       },
     },
+    // wall
     {
-      "inherit": ["static"],
-      "components": {
-        "box fixture": {
-          "size": [1000, 20]
-        }
-      },
+      "inherit": ["static-wall"],
       "properties": {
-        "position": ["1000", "-500"]
+        "position": [
+          "376",
+          "-396"
+        ]
+      }
+    },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "376",
+          "-652"
+        ]
+      }
+    },
+    // zero floor
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "632",
+          "-652"
+        ]
+      }
+    },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "888",
+          "-652"
+        ]
+      }
+    },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "1144",
+          "-652"
+        ]
+      }
+    },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "1400",
+          "-652"
+        ]
+      }
+    },
+    {
+      "inherit": ["static-wall"],
+      "properties": {
+        "position": [
+          "1656",
+          "-652"
+        ]
       }
     },
     {
@@ -263,6 +400,12 @@
       "inherit": ["point-light-0"],
       "properties": {
         "position": ["200", "200"],
+      }
+    },
+    {
+      "inherit": ["point-light-0"],
+      "properties": {
+        "position": ["0", "0"],
       }
     },
     {
