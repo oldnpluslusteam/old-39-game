@@ -29,7 +29,7 @@ public class StartupScreen extends DefaultScreen {
     protected void createLayers(AParts<Screen, Layer> layers) {
         super.createLayers(layers);
 
-        ScreenUtils.enableToggleDebug(this, true);
+        ScreenUtils.enableToggleDebug(this, false);
 
         Game game = layers.add("game", new GameLayerWith2DPhysicalGame()).game();
         GameDeclaration gameDeclaration = IoC.resolve(
@@ -48,6 +48,14 @@ public class StartupScreen extends DefaultScreen {
                 if (event.get()) return false;
                 if (!debugEnabled.get()) return false;
                 next(new StartupScreen());
+                return true;
+            }
+        });
+
+        game.events().event("endGame", Event.makeEvent()).subscribe(new EventListener<Event>() {
+            @Override
+            public boolean onTriggered(Event event) {
+                next(new FadeScreen());
                 return true;
             }
         });
